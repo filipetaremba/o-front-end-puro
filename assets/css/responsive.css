@@ -1,0 +1,254 @@
+/* ========================================
+   UNIVERSIDADE ZAMBEZE - RESPONSIVE
+   ======================================== */
+
+/* ========== TABLET (max-width: 1024px) ========== */
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 var(--espacamento-md);
+    }
+    
+    .slide-title {
+        font-size: 2.5rem;
+    }
+    
+    .slide-description {
+        font-size: 1.1rem;
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .welcome-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .welcome-image {
+        order: -1;
+    }
+    
+    .campus-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ========== MOBILE (max-width: 768px) ========== */
+@media (max-width: 768px) {
+    /* Header Mobile */
+    .top-bar-content {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+    
+    .contact-info {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .logo img {
+        height: 50px;
+    }
+    
+    .logo-text h1 {
+        font-size: 1.2rem;
+    }
+    
+    .logo-text p {
+        font-size: 0.65rem;
+    }
+    
+    /* Mobile Navigation */
+    .main-nav {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 80%;
+        max-width: 300px;
+        height: 100vh;
+        background-color: var(--branco);
+        box-shadow: var(--sombra-forte);
+        transition: var(--transicao-normal);
+        z-index: 9999;
+        overflow-y: auto;
+        padding: var(--espacamento-lg) var(--espacamento-sm);
+    }
+    
+    .main-nav.active {
+        left: 0;
+    }
+    
+    .main-nav ul {
+        flex-direction: column;
+        gap: 0;
+    }
+    
+    .main-nav li {
+        border-bottom: 1px solid var(--cinza-claro);
+    }
+    
+    .main-nav a {
+        padding: var(--espacamento-sm) 0;
+        display: block;
+    }
+    
+    .dropdown-menu {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        box-shadow: none;
+        background-color: var(--cinza-claro);
+        margin-top: 10px;
+        display: none;
+    }
+    
+    .dropdown.active .dropdown-menu {
+        display: block;
+    }
+    
+    .mobile-menu-toggle {
+        display: flex;
+    }
+    
+    /* Hero Slider Mobile */
+    .hero-slider {
+        height: 400px;
+    }
+    
+    .slide-content {
+        background: linear-gradient(to top, rgba(0, 57, 118, 0.9), transparent);
+        align-items: flex-end;
+        padding-bottom: var(--espacamento-lg);
+    }
+    
+    .slide-title {
+        font-size: 1.8rem;
+    }
+    
+    .slide-description {
+        font-size: 1rem;
+    }
+    
+    .slide-buttons {
+        flex-direction: column;
+    }
+    
+    .slider-control {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+    
+    .slider-control.prev {
+        left: 10px;
+    }
+    
+    .slider-control.next {
+        right: 10px;
+    }
+    
+    /* Statistics Mobile */
+    .statistics {
+        margin-top: 0;
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--espacamento-sm);
+    }
+    
+    .stat-card {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    /* Sections Mobile */
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .section-subtitle {
+        font-size: 1rem;
+    }
+    
+    /* Welcome Section Mobile */
+    .welcome-text p {
+        font-size: 1rem;
+    }
+    
+    .welcome-buttons {
+        flex-direction: column;
+    }
+    
+    /* Campus Mobile */
+    .campus-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* News Mobile */
+    .news-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* CTA Mobile */
+    .cta-content h2 {
+        font-size: 1.8rem;
+    }
+    
+    .cta-content p {
+        font-size: 1rem;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+    }
+    
+    /* Footer Mobile */
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-bottom-content {
+        flex-direction: column;
+        gap: var(--espacamento-sm);
+        text-align: center;
+    }
+    
+    .footer-legal {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+/* ========== SMALL MOBILE (max-width: 480px) ========== */
+@media (max-width: 480px) {
+    html {
+        font-size: 14px;
+    }
+    
+    .hero-slider {
+        height: 350px;
+    }
+    
+    .slide-title {
+        font-size: 1.5rem;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .scroll-to-top {
+        width: 45px;
+        height: 45px;
+        bottom: 20px;
+        right: 20px;
+    }
+}

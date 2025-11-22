@@ -1,0 +1,21 @@
+# Adicionar conteúdo ao .gitignore
+@"
+# Ignorar arquivos do sistema
+.DS_Store
+Thumbs.db
+
+# Ignorar pastas de IDE
+.vscode/
+.idea/
+
+# Ignorar arquivos temporários
+*.tmp
+*.log
+
+# Ignorar node_modules (se usar npm)
+node_modules/
+
+# Ignorar arquivos de configuração local
+.env
+config.local.php
+"@ | Out-File -FilePath ".gitignore" -Encoding UTF8
