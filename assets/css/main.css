@@ -146,8 +146,8 @@ ul {
 }
 
 .header-content {
-    display: grid;
-    grid-template-columns: auto 1fr auto;
+    display: flex;
+    justify-content: space-between;
     gap: 30px;
     align-items: center;
 }
@@ -426,16 +426,20 @@ ul {
 }
 
 /* ========== HERO SLIDER ========== */
-.hero-slider {
-    position: relative;
-    height: 500px;
-    overflow: hidden;
-    background-color: #212121;
-}
+    .hero-slider {
+        padding-bottom: 0px;
+        padding-top: 0px;
+        position: relative;
+        height: 500px; /* Aumentado */
+        overflow: hidden;
+        width: 100%; /* Ocupa toda largura */
+        margin: 0; /* Remove margens */
+    }
 
 .slider-wrapper {
     position: relative;
     height: 100%;
+    width: 100%;
 }
 
 .slide {
@@ -464,40 +468,42 @@ ul {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to right, rgba(0, 57, 118, 0.85), transparent);
+    background: linear-gradient(to right, rgba(0, 57, 118, 0.88), rgba(0, 57, 118, 0.3));
     display: flex;
     align-items: center;
 }
 
 .slide-content {
-    max-width: 600px;
+    max-width: 650px;
+    padding-left: 50px; /* Espaçamento da borda */
 }
 
 .slide-label {
     display: inline-block;
-    padding: 6px 15px;
+    padding: 8px 18px;
     background-color: var(--dourado);
     color: var(--azul-escuro);
     font-size: 12px;
-    font-weight: 600;
+    font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+    border-radius: 3px;
 }
 
 .slide-content h2 {
-    font-size: 42px;
+    font-size: 48px;
     color: var(--branco);
     font-weight: 700;
-    margin-bottom: 15px;
+    margin-bottom: 18px;
     line-height: 1.2;
 }
 
 .slide-content p {
     font-size: 18px;
     color: var(--branco);
-    margin-bottom: 25px;
-    line-height: 1.6;
+    margin-bottom: 30px;
+    line-height: 1.7;
 }
 
 .slide-actions {
@@ -506,7 +512,7 @@ ul {
 }
 
 .btn-slide {
-    padding: 12px 30px;
+    padding: 14px 35px;
     border-radius: 4px;
     font-size: 15px;
     font-weight: 600;
@@ -521,6 +527,7 @@ ul {
 .btn-slide.primary:hover {
     background-color: #B71C1C;
     transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(211, 47, 47, 0.4);
 }
 
 .btn-slide.secondary {
@@ -539,50 +546,61 @@ ul {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    width: 50px;
-    height: 50px;
-    background-color: rgba(255, 255, 255, 0.3);
+    width: 55px;
+    height: 55px;
+    background-color: rgba(0, 0, 0, 0.4);
     color: var(--branco);
-    border: none;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 22px;
     transition: all 0.3s ease;
+    z-index: 10;
 }
 
 .slider-controls button:hover {
     background-color: var(--vermelho);
+    border-color: var(--vermelho);
 }
 
 .slider-prev {
-    left: 20px;
+    left: 30px;
 }
 
 .slider-next {
-    right: 20px;
+    right: 30px;
 }
 
+/* Slider Dots - DENTRO DO SLIDER */
 .slider-dots {
     position: absolute;
-    bottom: 25px;
+    bottom: 30px; /* Dentro do slider */
     left: 50%;
     transform: translateX(-50%);
     display: flex;
-    gap: 10px;
+    gap: 12px;
+    z-index: 10;
 }
 
 .slider-dots span {
-    width: 12px;
-    height: 12px;
-    background-color: rgba(255, 255, 255, 0.5);
+    width: 14px;
+    height: 14px;
+    background-color: rgba(255, 255, 255, 0.4);
+    border: 2px solid rgba(255, 255, 255, 0.6);
     border-radius: 50%;
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
+.slider-dots span:hover {
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
 .slider-dots span.active {
     background-color: var(--dourado);
-    width: 35px;
-    border-radius: 6px;
+    border-color: var(--dourado);
+    width: 40px; /* Alongado quando ativo */
+    border-radius: 7px;
 }
 
 /* ========== QUICK LINKS SECTION ========== */
@@ -593,7 +611,8 @@ ul {
 
 .quick-links-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
+    /* grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); */
     gap: 20px;
 }
 
